@@ -5,16 +5,10 @@ var url = require("url");
 let app = http.createServer(function (request, response) {
   let _url = request.url;
   let queryData = url.parse(_url, true).query;
-  console.log(queryData.id);
   let title = queryData.id;
 
-  if (_url === "/") {
-    title = "Welcome";
-  }
-  if (_url === "/favicon.ico") {
-    return response.writeHead(404);
-  }
-  response.writeHead(200);
+  console.log(url.parse(_url, true));
+
   fs.readFile(`data/${queryData.id}`, "utf8", function (err, description) {
     let template = `
         <!DOCTYPE html>
@@ -37,6 +31,7 @@ let app = http.createServer(function (request, response) {
         </body>
         </html>
     `;
+    response.writeHead(200);
     response.end(template);
   });
 });
