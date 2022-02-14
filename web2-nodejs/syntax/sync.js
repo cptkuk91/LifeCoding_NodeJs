@@ -17,3 +17,5 @@ fs.readFile('sample.txt', 'utf-8', (err, result) => {
 console.log('C');
 
 // 출력이 동기와 달라진 이유는 fs.readFile을 처리하는 동안, C가 우선적으로 작업이 끝났기 때문입니다.
+
+// 폴더 구조를 변경했습니다.
