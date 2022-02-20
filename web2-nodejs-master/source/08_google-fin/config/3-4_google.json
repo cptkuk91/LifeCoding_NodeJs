@@ -1,0 +1,11 @@
+{
+    "web": {
+        "client_id":"311095303022-l4hrbvefkehkqo0u0qppn95hv7vdff3l.apps.googleusercontent.com",
+        "project_id":"vocal-lead-299120",
+        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+        "token_uri":"https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret":"fPlbpHOxcrU_hhjuZKEJkSXN",
+        "redirect_uris":["http://localhost:3000/auth/google/callback"]
+    }
+}
