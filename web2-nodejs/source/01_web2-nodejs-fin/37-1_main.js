@@ -59,7 +59,10 @@ var app = http.createServer(function(request, response) {
                         `<h2>${title}</h2><p>${description}</p>`,
                         `<a href="/create">create</a>
                         <a href="/update?id=${title}">update</a>
-                        <a href="/delete?id=${title}">delete</a>`
+                        <form action="delete_process" method="post" onsubmit="return confirm('정말로 삭제하시겠습니까?');">
+                            <input type="hidden" name="id" value="${title}">
+                            <input type="submit" value="delete">
+                        </form>`,
                     );
                     response.writeHead(200);
                     response.end(template);
@@ -137,6 +140,21 @@ var app = http.createServer(function(request, response) {
                     response.writeHead(302, {Location: `/?id=${title}`});
                     response.end();
                 });
+            });
+        });
+    } else if(pathname === '/delete_process'){
+        let body = "";
+        request.on('data', (data) => {
+            body += data
+            console.log(data);
+        });
+        request.on('end', () => {
+            let post = qs.parse(body);
+            console.log(post);
+            let id = post.id;
+            fs.unlink(`data/${id}`, (error) => {
+                response.writeHead(302, {Location: `/`});
+                response.end();
             });
         });
     } else {
