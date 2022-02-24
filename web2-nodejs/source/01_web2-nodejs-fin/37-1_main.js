@@ -154,6 +154,7 @@ var app = http.createServer(function(request, response) {
             let id = post.id;
             fs.unlink(`data/${id}`, (error) => {
                 response.writeHead(302, {Location: `/`});
+                // 302를 통한 리다이렉션 응답
                 response.end();
             });
         });
