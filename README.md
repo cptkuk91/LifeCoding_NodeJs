@@ -20,3 +20,5 @@ for(let name in school){
   console.log('key', name, 'value', school[name]);
 }
 ```
+
+수정 중..
