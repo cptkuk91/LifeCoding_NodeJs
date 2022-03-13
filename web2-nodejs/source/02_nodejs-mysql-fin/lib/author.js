@@ -135,6 +135,7 @@ exports.delete_process = function(request, response) {
         var post = qs.parse(body);
         db.query(
             `DELETE FROM topic WHERE author_id=?`,
+            // 오타 수정 WHRER to WHERE
             [post.id],
             function(error1, result1) {
                 if(error1) {
