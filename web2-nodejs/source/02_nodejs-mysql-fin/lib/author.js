@@ -134,7 +134,7 @@ exports.delete_process = function(request, response) {
     request.on('end', function() {
         var post = qs.parse(body);
         db.query(
-            `DELETE FROM topic WHRER author_id=?`,
+            `DELETE FROM topic WHERE author_id=?`,
             [post.id],
             function(error1, result1) {
                 if(error1) {
