@@ -159,12 +159,12 @@ var app = http.createServer(function(request, response) {
         });
         request.on('end', function() {
             var post = qs.parse(body);
-            if(post.email === 'egoing777@gmail.com' && post.password === '111111') {
+            if(post.email === 'cptkuk91@gmail.com' && post.password === '111111') {
                 response.writeHead(302, {
                     'Set-Cookie':[
                         `email=${post.email}`,
                         `password=${post.password}`,
-                        `nickname=egoing`
+                        `nickname=cptkuk91`
                     ],
                     Location: `/`
                 });

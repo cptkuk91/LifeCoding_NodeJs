@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/wikibook/nodejs#readme",
   "dependencies": {
+    "cookie": "^0.4.2",
     "sanitize-html": "^1.18.2"
   }
 }

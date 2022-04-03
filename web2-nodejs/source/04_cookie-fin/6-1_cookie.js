@@ -16,3 +16,5 @@ http.createServer(function(request, response) {
     });
     response.end('Cookie!!');
 }).listen(3000);
+
+// Max-Age를 통한 쿠키의 유통기한 설정
