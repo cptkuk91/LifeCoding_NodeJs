@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/wikibook/nodejs#readme",
   "dependencies": {
+    "express": "^4.17.3",
     "sanitize-html": "^1.18.2"
   }
 }
